@@ -1,0 +1,20 @@
+//@ui5-bundle qubabynw/Component-preload.js
+sap.ui.require.preload({
+	"qubabynw/Component.js":function(){
+sap.ui.define(["sap/ui/core/UIComponent","sap/ui/Device","qubabynw/model/models"],function(e,t,i){"use strict";return e.extend("qubabynw.Component",{metadata:{manifest:"json"},init:function(){e.prototype.init.apply(this,arguments);this.getRouter().initialize();this.setModel(i.createDeviceModel(),"device")}})});
+},
+	"qubabynw/controller/App.controller.js":function(){
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(n){"use strict";return n.extend("qubabynw.controller.App",{onInit(){}})});
+},
+	"qubabynw/controller/Customer.controller.js":function(){
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(n){"use strict";return n.extend("qubabynw.controller.Customer",{onInit:function(){}})});
+},
+	"qubabynw/i18n/i18n.properties":'# This is the resource bundle for qubabynw\n\n#Texts for manifest.json\n\n#XTIT: Application name\nappTitle=App Title\n\n#YDES: Application description\nappDescription=A Fiori application.\n#XTIT: Main view title\ntitle=App Title',
+	"qubabynw/manifest.json":'{"_version":"1.49.0","sap.app":{"id":"qubabynw","type":"application","i18n":"i18n/i18n.properties","applicationVersion":{"version":"0.0.1"},"title":"{{appTitle}}","description":"{{appDescription}}","resources":"resources.json","sourceTemplate":{"id":"@sap/generator-fiori:basic","version":"1.10.1","toolsId":"cf901fd7-bc20-469b-95ea-b6bd7c550ba2"},"dataSources":{"mainService":{"uri":"Northwind/Northwind.svc/","type":"OData","settings":{"annotations":[],"localUri":"localService/metadata.xml","odataVersion":"2.0"}}}},"sap.ui":{"technology":"UI5","icons":{"icon":"","favIcon":"","phone":"","phone@2":"","tablet":"","tablet@2":""},"deviceTypes":{"desktop":true,"tablet":true,"phone":true}},"sap.ui5":{"flexEnabled":true,"dependencies":{"minUI5Version":"1.115.1","libs":{"sap.m":{},"sap.ui.core":{},"sap.f":{},"sap.suite.ui.generic.template":{},"sap.ui.comp":{},"sap.ui.generic.app":{},"sap.ui.table":{},"sap.ushell":{}}},"contentDensities":{"compact":true,"cozy":true},"models":{"i18n":{"type":"sap.ui.model.resource.ResourceModel","settings":{"bundleName":"qubabynw.i18n.i18n"}},"":{"dataSource":"mainService","preload":true,"settings":{}}},"resources":{"css":[{"uri":"css/style.css"}]},"routing":{"config":{"routerClass":"sap.m.routing.Router","viewType":"XML","async":true,"viewPath":"qubabynw.view","controlAggregation":"pages","controlId":"app","clearControlAggregation":false},"routes":[{"name":"RouteCustomer","pattern":":?query:","target":["TargetCustomer"]}],"targets":{"TargetCustomer":{"viewType":"XML","transition":"slide","clearControlAggregation":false,"viewId":"Customer","viewName":"Customer"}}},"rootView":{"viewName":"qubabynw.view.App","type":"XML","async":true,"id":"App"}},"sap.cloud":{"public":true,"service":"qubabynw"}}',
+	"qubabynw/model/models.js":function(){
+sap.ui.define(["sap/ui/model/json/JSONModel","sap/ui/Device"],function(e,n){"use strict";return{createDeviceModel:function(){var i=new e(n);i.setDefaultBindingMode("OneWay");return i}}});
+},
+	"qubabynw/view/App.view.xml":'<mvc:View controllerName="qubabynw.controller.App"\n    xmlns:html="http://www.w3.org/1999/xhtml"\n    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"\n    xmlns="sap.m"><App id="app"></App></mvc:View>\n',
+	"qubabynw/view/Customer.view.xml":'<mvc:View controllerName="qubabynw.controller.Customer"\n    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"\n    xmlns="sap.m"><Page id="page" title="{i18n>title}"><content><Table id="tb" items="{/Customers}"><columns><Column id="custid"\n\t\t\t\twidth="12em"><Text id="custidt" text="Product" /></Column><Column id="custname"\n\t\t\t\tminScreenWidth="Tablet"\n\t\t\t\tdemandPopin="true"><Text  id="custnamet" text="Supplier" /></Column></columns><items><ColumnListItem id="cli" vAlign="Middle"><cells><Text id="custidtv" text="{CustomerID}" /><Text id="custnametv" text="{CompanyName}"/></cells></ColumnListItem></items></Table></content></Page></mvc:View>\n'
+});
+//# sourceMappingURL=Component-preload.js.map
