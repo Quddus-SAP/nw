@@ -17,7 +17,7 @@ server:
           url: https://ui5.sap.com
         backend:
           - path: /Northwind
-            url: https://services.odata.org
+            url: https://services.odata.org/Northwind
             destination: QS_BABY
     - name: fiori-tools-appreload
       afterMiddleware: compression
