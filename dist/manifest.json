@@ -22,7 +22,7 @@
                 "settings": {
                     "annotations": [],
                     "localUri": "localService/metadata.xml",
-                    "odataVersion": "3.0"
+                    "odataVersion": "4.0"
                 }
             }
         }
